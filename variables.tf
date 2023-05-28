@@ -11,7 +11,7 @@ variable "tags" {
 
 variable "subnet_ids" {
   type        = list(string)
-  default = []
+  default     = []
   description = "Subnet IDs for the Lambda"
 }
 

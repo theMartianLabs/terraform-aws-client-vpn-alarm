@@ -4,27 +4,27 @@ variable "region" {
 }
 
 variable "account_id" {
-  type    = string
+  type        = string
   description = "AWS account ID"
 }
 
 variable "client_vpn_server_id" {
-  type    = string
+  type        = string
   description = "Client VPN endpoint ID"
 }
 
 variable "vpc_id" {
-  type    = string
+  type        = string
   description = "VPC ID"
 }
 
 variable "subnet_ids" {
-  type    = list()
+  type        = list()
   description = "Subent IDs"
 }
 
 variable "client_vpn_endpoint_id" {
-  type    = string
+  type        = string
   description = "Client VPN endpoint ID"
 }
 

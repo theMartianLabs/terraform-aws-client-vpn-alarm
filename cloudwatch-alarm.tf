@@ -1,5 +1,5 @@
 resource "aws_sns_topic" "sns_monitoring_topic" {
-  name  = local.sns_topic_name
+  name = local.sns_topic_name
 }
 
 resource "aws_sns_topic_policy" "sns_policy" {
@@ -21,7 +21,7 @@ resource "aws_cloudwatch_metric_alarm" "cloudwatch_alarm_client_vpn_clrExpiry" {
   namespace           = "AWS/ClientVPN"
   period              = "300"
   statistic           = "Minimum"
-  threshold           = var.crl_alarm_threshold 
+  threshold           = var.crl_alarm_threshold
   alarm_description   = "Monitors number of days from clr expiry"
   alarm_actions       = ["${local.alarm_topic}"]
 

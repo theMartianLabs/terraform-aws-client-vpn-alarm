@@ -2,7 +2,7 @@ resource "aws_security_group" "client_vpn_lambda_sg" {
   name        = "client_vpn_lambda_sg"
   description = "Security Group for the lambda"
   vpc_id      = var.vpc_id
- 
+
   tags = merge({
     Name = "client_vpn_lambda_sg"
     },

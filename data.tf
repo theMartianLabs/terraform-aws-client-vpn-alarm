@@ -1,9 +1,9 @@
 data "aws_iam_policy" "aws_lambda_execute_policy" {
-  name  = "AWSLambdaExecute"
+  name = "AWSLambdaExecute"
 }
 
 data "aws_iam_policy" "aws_ssm_policy" {
-  name  = "AmazonSSMFullAccess"
+  name = "AmazonSSMFullAccess"
 }
 
 data "archive_file" "client_vpn_file" {

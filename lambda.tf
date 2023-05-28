@@ -5,13 +5,13 @@ resource "aws_cloudwatch_log_group" "client_vpn_lambda_logs" {
 }
 
 resource "aws_iam_role" "client_vpn_lambda_iam" {
-  name  = local.lambda_role_name
+  name = local.lambda_role_name
 
   assume_role_policy = file("${path.module}/policies/lambda_trust_policy.json")
 }
 
 resource "aws_iam_policy" "client_vpn_lambda_policy" {
-  name  = local.lambda_iam_policy_name
+  name = local.lambda_iam_policy_name
 
   policy = data.template_file.client_vpn_lambda_template.rendered
 }
@@ -30,9 +30,9 @@ resource "aws_lambda_function" "client_vpn_lambda" {
   filename         = data.archive_file.client_vpn_file.output_path
   source_code_hash = data.archive_file.client_vpn_file.output_base64sha256
 
-  vpc_config {    
-      subnet_ids         = flatten(var.subnet_ids)
-      security_group_ids = [aws_security_group.client_vpn_lambda_sg.id]
+  vpc_config {
+    subnet_ids         = flatten(var.subnet_ids)
+    security_group_ids = [aws_security_group.client_vpn_lambda_sg.id]
   }
   environment {
     variables = {

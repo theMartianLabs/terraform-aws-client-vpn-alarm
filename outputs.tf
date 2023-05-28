@@ -1,4 +1,4 @@
-output cloudwatch_alarm_arn {
+output "cloudwatch_alarm_arn" {
   value = aws_cloudwatch_metric_alarm.cloudwatch_alarm_client_vpn_clrExpiry.arn
 }
 
